@@ -1,3 +1,4 @@
+
 const showDate = () => {
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
@@ -5,7 +6,7 @@ const showDate = () => {
     let yyyy = today.getFullYear();
 
     today =  `Today's date is ${dd}/${mm}/${yyyy}`
-    let displayDate = document.getElementById('display-date')
+    let displayDate = document.getElementById('printdate')
     displayDate.innerHTML = today
 }
 
@@ -21,6 +22,9 @@ const showJoke = () => {
                 'How does NASA organize a party? They planet.', 
                 'What did the left eye say to the right eye? Between you and me, something smells.'];
     let randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
-    let displayJoke = document.getElementById('display-joke');
+    let displayJoke = document.getElementById('printjoke');
     displayJoke.innerHTML = randomJoke
 }
+
+document.getElementById("displaydate").addEventListener("click", showDate);
+document.getElementById("displayjoke").addEventListener("click", showJoke);
